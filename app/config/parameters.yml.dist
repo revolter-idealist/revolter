@@ -19,4 +19,9 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
     
     index_file: README
-    path.web: '%kernel.root_dir%/../web'
+    index_idea: 'revolter-social-project'
+    index_name: 'info'
+    
+    path.web:   '%kernel.root_dir%/../web'
+    path.idea:  ''
+    path.texts: '%path.web%/texts'

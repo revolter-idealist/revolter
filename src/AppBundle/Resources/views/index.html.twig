@@ -1,0 +1,12 @@
+{% extends 'index.html.twig' %}
+{% block body %}
+
+<header>
+
+  <div>шапка</div>
+</header>
+<div id="wrapper" class="paper">
+  {{content|md2html}}
+  <div class="footer"></div> 
+</div>
+{% endblock %}

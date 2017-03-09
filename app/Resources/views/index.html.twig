@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <meta charset="UTF-8">
+  {% block stylesheets %}{% endblock %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css.css">
+</head>
+<body> 
+{#<header>
+  <div class="infobar">шапка</div>
+</header>#}
+<br>
+  <div class="container">
+    <div class="row primary-container">
+      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 paper">
+      {% block body %}{% endblock %}
+    </div>
+    <div class="clearfix hidden-lg"></div>
+    <div class="col-lg-4 ">
+      <aside>
+        <div class="print-left">
+          <button class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+            Распечать...
+          </button>
+        </div>
+        <div>
+          {{links|md2html}}
+        </div>
+        <div class="index-maintain">
+          {{maintain|md2html}}
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+  <div class="footer">&nbsp;</div> 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
