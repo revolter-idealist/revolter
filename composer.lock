@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a25de04438ed93c49857ca4fe170d930",
-    "content-hash": "54c47dba5c36ad38b5b13b8da0d495cb",
+    "hash": "858d5e4a8b9818c31fef8fd9564d9081",
+    "content-hash": "570f14cc9cecd424a3db98ac67ecefe1",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1138,6 +1138,84 @@
             "time": "2016-10-10 12:19:37"
         },
         {
+            "name": "revolter-idealist/distributed-community",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/revolter-idealist/distributed-community",
+                "reference": "735a6e6a2eb34325a87acdd2c5848ada99275025"
+            },
+            "type": "library",
+            "scripts": {
+                "post-install-cmd": [
+                    "ln -sfnr vendor/revolter-idealist/distributed-community web/texts/distributed-community"
+                ]
+            },
+            "time": "2017-03-09 13:08:42"
+        },
+        {
+            "name": "revolter-idealist/method-of-paper-leaflets",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/revolter-idealist/method-of-paper-leaflets",
+                "reference": "2e25f7cc11ae92217d8ccac8d12936ab4ff785fc"
+            },
+            "type": "library",
+            "time": "2017-03-09 13:39:06"
+        },
+        {
+            "name": "revolter-idealist/revolter-social-project",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/revolter-idealist/revolter-social-project",
+                "reference": "124c3006604b9f9d381913e9124845f0c38acc1e"
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "ext-libsodium": "Социальный проект."
+            },
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Revolter Idealist",
+                    "email": "",
+                    "homepage": ""
+                }
+            ],
+            "description": "Социальный проект",
+            "keywords": [
+                "проект",
+                "социальный"
+            ],
+            "support": {
+                "issues": "revolter-idealist/revolter-social-project",
+                "email": "",
+                "source": "https://github.com/revolter-idealist/revolter-social-project"
+            },
+            "time": "2017-03-09 13:37:33"
+        },
+        {
+            "name": "revolter-idealist/stop-revolution",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/revolter-idealist/stop-revolution",
+                "reference": "d3d089c1bde68a50ef0c875a67e949d0cc0cb640"
+            },
+            "type": "library",
+            "time": "2017-03-09 13:39:40"
+        },
+        {
             "name": "sensio/distribution-bundle",
             "version": "v5.0.14",
             "source": {
@@ -2122,7 +2200,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "revolter-idealist/distributed-community": 20,
+        "revolter-idealist/revolter-social-project": 20,
+        "revolter-idealist/method-of-paper-leaflets": 20,
+        "revolter-idealist/stop-revolution": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
