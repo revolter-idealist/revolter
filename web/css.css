@@ -97,6 +97,10 @@ aside {
     } 
 }
     
+    .page {
+        page-break-after: always;
+    }
+    
     .more {
         display: block;
         page-break-after: always;

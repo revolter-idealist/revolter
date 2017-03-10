@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="/css.css">
 </head>
 <body>
-  {{content|md2html|headlink}}
+  {% for page in pages %}
+      <div class="page print">{{page|md2html|headlink}}</div>
+  {% endfor %}
 </body>
 </html>
 

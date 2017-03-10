@@ -102,15 +102,15 @@ class DefaultController extends Controller
         return substr($str, 0, 80);
     }
     
-    public function setLeaflet($content)
+    public function getPages($content)
     {
-        $result = $content; 
-        preg_match_all('/^\#{1} (.*)$/m', $content, $parts, PREG_OFFSET_CAPTURE);
-        
-        if (count($parts) > 1) {
-            $position = $parts[0][1][1]; 
-            $page_break = '<div class="more"></div>'."\n";
-            $result = substr_replace($content, $page_break, $position, 0); //echo $position ; exit;
+        $result = []; //echo $content ; exit;
+        preg_match_all('/(^|\n)(# .*?)($|\n# )/s', $content, $parts);
+        // print_r($parts); exit;
+        if (count($parts)) {
+            //$position = $parts[0][1][1];
+            //$page_break = '<div class="more"></div>'."\n";
+            $result = $parts[2]; //echo $position ; exit;
         }   
         return $result;
     }
@@ -127,7 +127,7 @@ class DefaultController extends Controller
         return $this->render('AppBundle::print.html.twig', [
             'title'    => $this->getTitle($content),
             'links'    => $this->getLinks($content),
-            'content'  => $this->setLeaflet($content),
+            'pages'    => $this->getPages($content),
             'maintain' => $this->getMaintain(),
         ]);
     }
@@ -151,7 +151,7 @@ class DefaultController extends Controller
         return $this->render('AppBundle::'.$template.'.html.twig', [
             'title'    => $this->getTitle($content),
             'links'    => $this->getLinks($content),
-            'content'  => $this->setLeaflet($content),
+            'pages'    => $this->getPages($content),
             'maintain' => $this->getMaintain(),
         ]);
     }
