@@ -98,14 +98,14 @@ class DefaultController extends Controller
     public function getTitle($content)
     {
         $str = substr($content, 0, strpos($content, "\n"));
-        $str = preg_replace("~[#*()\[\]_\~`-|=]*~", '', $str);
+        $str = preg_replace("~[\#*()\[\]_\~`|=]*~", '', $str);
         return substr($str, 0, 80);
     }
     
     public function getPages($content)
     {
         $result = []; //echo $content ; exit;
-        preg_match_all('/(^|\n)(# .*?)($|\n# )/s', $content, $parts);
+        preg_match_all('/(^|\n)(# .*?)(?=$|\n# )/s', $content, $parts);
         // print_r($parts); exit;
         if (count($parts)) {
             //$position = $parts[0][1][1];
