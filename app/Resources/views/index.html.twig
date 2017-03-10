@@ -8,21 +8,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/css.css">
 </head>
-<body> 
+<body>
 {#<header>
   <div class="infobar">шапка</div>
-</header>#}
-<br>
-  <div class="container">
-    <div class="row primary-container">
-      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 paper">
+</header>
+<br>#}
+  <div class="container print">
+    <div class="row primary-container print">
+      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 paper print">
       {% block body %}{% endblock %}
     </div>
     <div class="clearfix hidden-lg"></div>
-    <div class="col-lg-4 ">
+    <div class="col-lg-4 aside">
       <aside>
         <div class="print-left">
-          <button class="btn btn-primary btn-lg">
+          <button class="btn btn-primary btn-lg" onclick="window.print();">
             <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
             Распечать...
           </button>
@@ -38,7 +38,7 @@
     </div>
   </div>
 </div>
-  <div class="footer">&nbsp;</div> 
+  <div class="footer">&nbsp;</div>
 
 </body>
 </html>

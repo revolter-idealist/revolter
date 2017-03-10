@@ -2,6 +2,7 @@
 body {
     background: #f2f2f2;
     font-size: 14pt;
+    padding-top: 20px;
 }
 p {
     font-size: 13pt;
@@ -37,17 +38,17 @@ blockquote {
 
 aside {
   margin-left: 20px;
-  margin-top:  30px; 
+  margin-top:  30px;
 }
 
 .index-links {
-    
+
 }
 
 .index-maintain {
     font-size: smaller;
-    border-top: 1px solid #CCC; 
-    margin-top: 20px; 
+    border-top: 1px solid #CCC;
+    margin-top: 20px;
     padding-top: 20px;
     padding-right: 20px;
 }
@@ -57,7 +58,7 @@ aside {
 }
 
 .print-left {
-    
+
 }
 
 .primary-container:after {
@@ -68,3 +69,31 @@ aside {
     /*background: #6b9311;*/
 }
 
+@media print {
+    .aside, .footer, div:not(.print){
+        display: none;
+    }
+
+    .h1, .h2, .h3, h1, h2, h3 {
+        margin-top: 0px;
+        line-height: 1;
+        font-size: 100%;
+    }
+
+    h1 { font-size: 200%; }
+    h2 { font-size: 160%; }
+    h3 { font-size: 130%; }
+
+    .paper {
+        padding: 0mm 5mm 5mm;
+    }
+
+    body {
+        font-size: 220%;
+    }
+
+    p {
+        font-size: 100%;
+    }
+
+}
