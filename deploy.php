@@ -11,7 +11,7 @@ set('git_cache', false);
 
 set('repository', 'https://github.com/revolter-idealist/revolter.git');
 // -- Общие папки
-set('shared_dirs', array_merge(['web/texts'], get('shared_dirs')));
+//set('shared_dirs', array_merge([''], get('shared_dirs')));
 //set('shared_files', []);
 //set('writable_dirs', []);
 
@@ -28,7 +28,7 @@ set('keep_releases', 5);
 
 if(file_exists('dep_conf.php')) {
 	include('dep_conf.php');
-}	
+}
 
 set('composer_command', '/bin/composer.phar');
 set('copy_dirs', ['vendor']);
