@@ -77,23 +77,29 @@ aside {
     .h1, .h2, .h3, h1, h2, h3 {
         margin-top: 0px;
         line-height: 1;
-        font-size: 100%;
+        /*font-size: 100%;*/
     }
 
-    h1 { font-size: 200%; }
+    /*h1 { font-size: 200%; }
     h2 { font-size: 160%; }
-    h3 { font-size: 130%; }
+    h3 { font-size: 130%; }*/
 
     .paper {
         padding: 0mm 5mm 5mm;
     }
 
     body {
-        font-size: 220%;
+        /*font-size: 220%;*/
     }
 
     p {
-        font-size: 100%;
-    }
-
+        /*font-size: 100%;*/
+    } 
 }
+    
+    .more {
+        display: block;
+        page-break-after: always;
+        page-break-inside: avoid;
+        position: relative;
+    }

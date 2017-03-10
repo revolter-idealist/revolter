@@ -51,12 +51,12 @@ after('deploy', 'success');
 
 
 // Ссылки на тексты
-task('text-links', function() {
-    run("mkdir -p {{release_path}}/web/texts");
-           cd("{{release_path}}/web/texts");
-    run("ln -sf {{release_path}}/vendor/revolter-idealist/distributed-community");
-    run("ln -sf {{release_path}}/vendor/revolter-idealist/method-of-paper-leaflets");
-    run("ln -sf {{release_path}}/vendor/revolter-idealist/revolter-social-project");
-    run("ln -sf {{release_path}}/vendor/revolter-idealist/stop-revolution");
-});
-after('deploy:vendors', 'text-links');
+//task('text-links', function() {
+//    run("mkdir -p {{release_path}}/web/texts");
+//           cd("{{release_path}}/web/texts");
+//    run("ln -sf {{release_path}}/vendor/revolter-idealist/distributed-community");
+//    run("ln -sf {{release_path}}/vendor/revolter-idealist/method-of-paper-leaflets");
+//    run("ln -sf {{release_path}}/vendor/revolter-idealist/revolter-social-project");
+//    run("ln -sf {{release_path}}/vendor/revolter-idealist/stop-revolution");
+//});
+//after('deploy:vendors', 'text-links');

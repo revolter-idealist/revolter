@@ -2,12 +2,6 @@
     "name": "ubunt/revolter",
     "license": "proprietary",
     "type": "project",
-    "repositories": [
-        {"type": "git", "url": "https://github.com/revolter-idealist/revolter-social-project"},
-        {"type": "git", "url": "https://github.com/revolter-idealist/distributed-community"},
-        {"type": "git", "url": "https://github.com/revolter-idealist/method-of-paper-leaflets"},
-        {"type": "git", "url": "https://github.com/revolter-idealist/stop-revolution"}
-    ],
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -34,11 +28,7 @@
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
-        "erusev/parsedown": "^1.6",
-        "revolter-idealist/distributed-community": "dev-master",
-        "revolter-idealist/revolter-social-project": "dev-master",
-        "revolter-idealist/method-of-paper-leaflets": "dev-master",
-        "revolter-idealist/stop-revolution": "dev-master"
+        "erusev/parsedown": "^1.6"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

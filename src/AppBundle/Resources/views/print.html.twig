@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <meta charset="UTF-8">
+  {% block stylesheets %}{% endblock %}
+  <link rel="stylesheet" href="/css.css">
+</head>
+<body>
+  {{content|md2html|headlink}}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

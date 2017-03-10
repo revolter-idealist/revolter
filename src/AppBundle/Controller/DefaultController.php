@@ -75,12 +75,11 @@ class DefaultController extends Controller
         return $result;
     }
     
-    public function getLinks($idea)
+    public function getLinks($content)
     {
-        $result = ''; 
-        $path = $this->getIdea($idea).'LINKS.md';
-        if (file_exists($path)) { 
-            $result = file_get_contents($path);
+        $result = [];  
+        if (preg_match_all('/^\#{1} (.*)$/m', $content, $matches)) { 
+            $result = $matches[1];
         }
         return $result;
     }
@@ -103,6 +102,36 @@ class DefaultController extends Controller
         return substr($str, 0, 80);
     }
     
+    public function setLeaflet($content)
+    {
+        $result = $content; 
+        preg_match_all('/^\#{1} (.*)$/m', $content, $parts, PREG_OFFSET_CAPTURE);
+        
+        if (count($parts) > 1) {
+            $position = $parts[0][1][1]; 
+            $page_break = '<div class="more"></div>'."\n";
+            $result = substr_replace($content, $page_break, $position, 0); //echo $position ; exit;
+        }   
+        return $result;
+    }
+    
+    /**
+     * @Route("/{idea}/print", name="print")
+     */
+    public function printAction($idea)
+    {
+        $content = $this->getText($idea, $this->getParameter('index_name')); 
+        if (!$content) {
+            throw $this->createNotFoundException('Страница не найдена');
+        } 
+        return $this->render('AppBundle::print.html.twig', [
+            'title'    => $this->getTitle($content),
+            'links'    => $this->getLinks($content),
+            'content'  => $this->setLeaflet($content),
+            'maintain' => $this->getMaintain(),
+        ]);
+    }
+    
     /**
      * @Route("/{idea}/{file}", name="file")
      */
@@ -121,8 +150,8 @@ class DefaultController extends Controller
         $template = $file == 'index' ? 'index' : 'texts';
         return $this->render('AppBundle::'.$template.'.html.twig', [
             'title'    => $this->getTitle($content),
-            'content'  => $content,
-            'links'    => $this->getLinks($idea),
+            'links'    => $this->getLinks($content),
+            'content'  => $this->setLeaflet($content),
             'maintain' => $this->getMaintain(),
         ]);
     }

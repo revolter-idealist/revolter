@@ -28,7 +28,9 @@
           </button>
         </div>
         <div>
-          {{links|md2html}}
+          {% for link in links %}
+            <a href="{{link|anchor}}">{{link}}</a><br>
+          {% endfor %}
         </div>
         <div class="index-maintain">
           {{maintain|md2html}}

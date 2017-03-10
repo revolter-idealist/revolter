@@ -18,8 +18,17 @@ class AppExtension extends \Twig_Extension
         return array(
             new \Twig_SimpleFilter(
                 'md2html',
-                array($this, 'markdownToHtml'),
-                array('is_safe' => array('html'))
+                [$this, 'markdownToHtml'],
+                ['is_safe' => ['html']]
+            ),
+            new \Twig_SimpleFilter(
+                'headlink',
+                [$this, 'headingToAnchor'],
+                ['is_safe' => ['html']]
+            ),
+            new \Twig_SimpleFilter(
+                'anchor',
+                [$this, 'textToAnchor']
             ),
         );
     }
@@ -27,6 +36,31 @@ class AppExtension extends \Twig_Extension
     public function markdownToHtml($content)
     {
         return $this->parser->toHtml($content);
+    }
+    
+    public function getAnchor($text)
+    {
+        $result = mb_convert_case($text, MB_CASE_LOWER);
+        $result = preg_replace('/\s/', '-', $result);
+        return $result;
+    }
+
+    public function textToAnchor($text)
+    { 
+        return '#'.$this->getAnchor($text);
+    }
+
+    public function headingToAnchor($content)
+    { 
+        //echo 'headingToAnchor'; exit;
+        return preg_replace_callback(
+            '/(<h1>)(.*?)(<\/h1>)/', 
+            function ($m) { 
+                $id = $this->getAnchor($m[2]); 
+                return $m[1].'<a id="'.$id.'" class="anchor" href="#'.$id.'">🔗</a>'.$m[2].$m[3];
+            },
+            $content
+        );
     }
 
     public function getName()
