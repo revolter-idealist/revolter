@@ -53,6 +53,30 @@ aside {
     padding-right: 20px;
 }
 
+
+.about {
+    font-size: 10pt;
+    border-top: 1px solid #CCC;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.about__link {
+    color: #CCC;
+}
+.about__link:hover {
+    color: #999;
+}
+
+.counters {
+  margin: 20px 0;
+  opacity: 0.3;
+}
+
+.counters:hover {
+  opacity: 1;
+}
+
 .print-left {
     margin-bottom: 20px;
 }
