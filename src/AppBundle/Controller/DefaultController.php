@@ -107,11 +107,13 @@ class DefaultController extends Controller
         $result = []; //echo $content ; exit;
         preg_match_all('/(^|\n)(# .*?)(?=$|\n# )/s', $content, $parts);
         // print_r($parts); exit;
-        if (count($parts)) {
+        if (count($parts[2])) {
             //$position = $parts[0][1][1];
-            //$page_break = '<div class="more"></div>'."\n";
+            //$page_break = '<div class="more"></div>'."\n"; 
             $result = $parts[2]; //echo $position ; exit;
-        }   
+        } else {
+            $result[0] = $content;
+        } //print_r($result); exit;
         return $result;
     }
     
@@ -123,7 +125,7 @@ class DefaultController extends Controller
         $content = $this->getText($idea, $this->getParameter('index_name')); 
         if (!$content) {
             throw $this->createNotFoundException('Страница не найдена');
-        } 
+        }
         return $this->render('AppBundle::print.html.twig', [
             'title'    => $this->getTitle($content),
             'links'    => $this->getLinks($content),
