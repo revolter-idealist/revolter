@@ -40,7 +40,7 @@ class AppExtension extends \Twig_Extension
     
     public function getAnchor($text)
     {
-        $result = mb_convert_case($text, MB_CASE_LOWER);
+        $result = $text; // mb_convert_case($text, MB_CASE_LOWER);
         $result = preg_replace('/\s/', '-', $result);
         return $result;
     }
@@ -57,7 +57,8 @@ class AppExtension extends \Twig_Extension
             '/(<h1>)(.*?)(<\/h1>)/', 
             function ($m) { 
                 $id = $this->getAnchor($m[2]); 
-                return $m[1].'<a id="'.$id.'" class="anchor" href="#'.$id.'">🔗</a>'.$m[2].$m[3];
+                $name = mb_convert_case($id, MB_CASE_LOWER); 
+                return $m[1].'<a id="'.$id.'" name="'.$name.'" class="anchor" href="#'.$id.'">🔗</a>'.$m[2].$m[3];
             },
             $content
         );

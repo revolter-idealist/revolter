@@ -24,7 +24,11 @@ class DefaultController extends Controller
         if ($file and $file != $default) { // $this->getParameter('path.deal') . '/' . 
             $result = $file;
         }
-        return $result . '.md';
+        $ext = pathinfo($result, PATHINFO_EXTENSION);
+        if (!$ext) {
+			$result .= '.md';
+		}
+        return $result;
     }
     
     public function getText($idea = null, $file = null)
@@ -36,7 +40,7 @@ class DefaultController extends Controller
             if ($content) {
                 $result = $content;
             }
-        }
+        } // echo $path ; exit;
         return $result;
     }
     /**
@@ -135,7 +139,10 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/{idea}/{file}", name="file")
+     * @Route("/{idea}/{file}", name="file", requirements={
+     *      "file"=".+"
+     * })) 
+     * 
      */
     public function fileAction($idea, $file)
     {
