@@ -62,7 +62,7 @@ class AppExtension extends \Twig_Extension
             function ($m) {
                 $id = $this->getAnchor($m[2]);
                 $name = mb_convert_case($id, MB_CASE_LOWER);
-                return $m[1].'<a id="'.$id.'" name="'.$name.'" class="anchor" href="#'.$id.'">🔗</a>'.$m[2].$m[3];
+                return $m[1].'<a id="'.$id.'" name="'.$name.'" class="external-link" href="#'.$id.'"></a>'.$m[2].$m[3];
             },
             $content
         );

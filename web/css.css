@@ -31,9 +31,9 @@ blockquote {
 }
 .paper {
     /*height: 297mm;*/
-    background: #FFFFFF;
+    background: #FFFFFF url('/an-gr.png') no-repeat;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-    padding: 5mm 15mm 10mm;
+    padding: 5mm 15mm 10mm; 
 }
 
 aside {
@@ -47,6 +47,27 @@ aside {
     min-height: 63px;
     padding: 5px 0;
 }
+
+.social-btn .pluso {
+    margin-left: -5px;
+}
+
+.external-link {
+    display: inline-block;
+    cursor: pointer;
+    background-image: url('/link.png');
+    margin-bottom: -3px;
+    margin-left: -42px;
+    margin-right: 8px;
+    height: 32px;
+    width: 32px;
+    opacity: 0.2;
+}
+
+.external-link:hover {
+    opacity: 0.8;
+}
+
 
 .index-maintain {
     font-size: smaller;
