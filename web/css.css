@@ -41,14 +41,17 @@ aside {
   margin-top:  30px;
 }
 
-.index-links {
-
+.social-btn {
+    border-top: 1px solid #CCC;
+    margin-top: 20px;
+    min-height: 63px;
+    padding: 5px 0;
 }
 
 .index-maintain {
     font-size: smaller;
     border-top: 1px solid #CCC;
-    margin-top: 20px;
+    margin-top: 0px;
     padding-top: 20px;
     padding-right: 20px;
 }

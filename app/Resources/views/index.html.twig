@@ -7,6 +7,9 @@
   {% block stylesheets %}{% endblock %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/css.css">
+      <meta property="og:title" content="{{title}}" />
+{#      <meta property="og:description" content="Описание" />
+      <meta property="og:url" content="Ссылка на страницу" />#}
 </head>
 <body>
 {#<header>
@@ -34,16 +37,31 @@
             <a href="{{link|anchor}}">{{link}}</a><br>
           {% endfor %}
         </div>
+        <div class="social-btn">
+          <div class="pluso" data-background="transparent" data-options="big,square,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,email"></div>
+        </div>
         <div class="index-maintain">
           {{maintain|md2html}}
         </div>
         <div class="about">
-          <a class="about__link" href="https://github.com/revolter-idealist/revolter" target="_blank"> 
+          <a class="about__link" href="https://github.com/revolter-idealist/revolter" target="_blank">
             Свободный проект {Revolter = ideaList}
           </a>
         </div>
         <div class="counters">
           {% include 'counters.html' %}
+
+
+           <script type="text/javascript">(function() {
+  if (window.pluso)if (typeof window.pluso.start == "function") return;
+  if (window.ifpluso==undefined) { window.ifpluso = 1;
+    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+    var h=d[g]('body')[0];
+    h.appendChild(s);
+  }})();</script>
+
         </div>
 
       </aside>
