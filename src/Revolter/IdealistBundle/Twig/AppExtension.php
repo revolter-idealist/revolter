@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBundle\Twig;
+namespace Revolter\IdealistBundle\Twig;
 
-use AppBundle\Utils\Markdown;
+use Revolter\IdealistBundle\Utils\Markdown;
 
 class AppExtension extends \Twig_Extension
 {

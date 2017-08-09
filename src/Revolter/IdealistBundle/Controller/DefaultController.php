@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace Revolter\IdealistBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -52,7 +52,7 @@ class DefaultController extends Controller
             'idea' => $this->getParameter('index_idea'),
             'file' => $this->getParameter('index_name'),
         ], 301);
-        return $this->render('AppBundle::index.html.twig', [
+        return $this->render('RevolterIdealistBundle::index.html.twig', [
             'content' => $this->getText(),
         ]);
     }
@@ -130,7 +130,7 @@ class DefaultController extends Controller
         if (!$content) {
             throw $this->createNotFoundException('Страница не найдена');
         }
-        return $this->render('AppBundle::print.html.twig', [
+        return $this->render('RevolterIdealistBundle::print.html.twig', [
             'title'    => $this->getTitle($content),
             'links'    => $this->getLinks($content),
             'pages'    => $this->getPages($content),
@@ -157,7 +157,7 @@ class DefaultController extends Controller
             throw $this->createNotFoundException('Страница не найдена');
         } 
         $template = $file == 'index' ? 'index' : 'texts';
-        return $this->render('AppBundle::'.$template.'.html.twig', [
+        return $this->render('RevolterIdealistBundle::'.$template.'.html.twig', [
             'title'    => $this->getTitle($content),
             'links'    => $this->getLinks($content),
             'pages'    => $this->getPages($content),

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Utils;
+namespace Revolter\IdealistBundle\Utils;
 
 class Markdown
 {
