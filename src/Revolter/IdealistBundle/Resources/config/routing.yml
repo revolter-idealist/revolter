@@ -1,3 +1,0 @@
-revolter_idealist_homepage:
-    path:     /
-    defaults: { _controller: RevolterIdealistBundle:Default:index }
