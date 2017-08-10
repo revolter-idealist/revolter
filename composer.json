@@ -1,6 +1,6 @@
 {
-    "name": "ubunt/revolter",
-    "license": "proprietary",
+    "name": "revolter/revolter",
+    "license": "GPLv3",
     "type": "project",
     "autoload": {
         "psr-4": {
