@@ -1,13 +1,86 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{{title}}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <meta charset="UTF-8">
   {% block stylesheets %}{% endblock %}
-  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css.css">
+      <meta property="og:title" content="{{title}}" />
+{#      <meta property="og:description" content="Описание" />
+      <meta property="og:url" content="Ссылка на страницу" />#}
 </head>
 <body>
-{% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
+{#<header>
+  <div class="infobar">шапка</div>
+</header>
+<br>#}
+  <div class="container print">
+    <div class="row primary-container print">
+      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 paper print">
+        {% for page in pages %}
+          <div class="page print">{{page|md2html|headlink}}</div>
+        {% endfor %}
+      </div>
+    <div class="clearfix hidden-lg"></div>
+    <div class="col-lg-4 aside">
+      <aside>
+        <div class="print-left">
+          <a class="btn btn-primary btn-lg" href="print" target="_blank">
+            <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+            Распечать...
+          </a>
+        </div>
+        <div>
+          {% for link in links %}
+            <a href="{{link|anchor}}">{{link}}</a><br>
+          {% endfor %}
+        </div>
+        <div class="social-btn">
+          <div class="pluso" data-background="transparent" data-options="big,square,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,email"></div>
+        </div>
+        <div class="index-maintain">
+          {{maintain|md2html}}
+        </div>
+        <div class="about">
+          <a class="about__link" href="https://github.com/revolter-idealist/revolter" target="_blank">
+            Свободный проект {Revolter = ideaList}
+          </a>
+        </div>
+        <div class="counters">
+          {% include 'counters.html' %}
+
+
+           <script type="text/javascript">(function() {
+  if (window.pluso)if (typeof window.pluso.start == "function") return;
+  if (window.ifpluso==undefined) { window.ifpluso = 1;
+    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+    var h=d[g]('body')[0];
+    h.appendChild(s);
+  }})();</script>
+
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+  <div class="footer">
+  &nbsp;
+  </div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
